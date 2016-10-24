@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClockView">
+
+        <!--表盘外圆的宽度-->
+        <attr name="circle_width" format="dimension" />
+        
+        <!--整点刻度的宽度-->
+        <attr name="longer_width" format="dimension"/>
+        
+        <!--整点刻度的高度-->
+        <attr name="longer_height" format="dimension"/>
+        
+        <!--非整点刻度的宽度-->
+        <attr name="shorter_width" format="dimension"/>
+        
+        <!--非整点刻度的高度-->
+        <attr name="shorter_height" format="dimension"/>
+        
+        <!--表盘中的文字大小-->
+        <attr name="text_size" format="dimension"/>
+        
+        <!--表盘中央的圆点的半径-->
+        <attr name="pointer_circle_radius" format="dimension"/>
+        
+        <!--时针宽度-->
+        <attr name="hour_width" format="dimension"/>
+        
+        <!--分针宽度-->
+        <attr name="minute_width" format="dimension"/>
+        
+        <!--秒针宽度-->
+        <attr name="second_width" format="dimension"/>
+        
+        <!--时针长度比例-->
+        <attr name="hour_height_density" format="float"/>
+        
+        <!--分针长度比例-->
+        <attr name="minute_height_density" format="float"/>
+        
+        <!--秒针长度比例-->
+        <attr name="second_height_density" format="float"/>
+
+        <!--表盘颜色-->
+        <attr name="circle_color" format="color"/>
+
+        <!--内部圆点颜色-->
+        <attr name="pointer_color" format="color" />
+
+        <!--时针颜色-->
+        <attr name="hour_color" format="color"/>
+
+        <!--分针颜色-->
+        <attr name="minute_color" format="color"/>
+
+        <!--秒针颜色-->
+        <attr name="second_color" format="color"/>
+
+    </declare-styleable>
+</resources>
