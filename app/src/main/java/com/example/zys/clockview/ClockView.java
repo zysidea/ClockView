@@ -272,14 +272,20 @@ public class ClockView extends View {
         }
 
         //绘制刻度数字
+        /**
+         * 一周是2π弧度，所以分成12分就是π/6
+         * 要计算出来每一个数字的左上角到圆心的距离，然后用弧度算出来角度进行sin，算出对应的X
+         */
         String text[] = getContext().getResources().getStringArray(R.array.clock);
         float startX = width / 2;
         float startY = height / 2 - width / 2 + 120;
-        float textR = (float) Math.sqrt(Math.pow(width / 2 - startX, 2) + Math.pow(height / 2 - startY, 2));
+       // float textR = (float) Math.sqrt(Math.pow(width / 2 - startX, 2) + Math.pow(height / 2 - startY, 2));
+        float textR = (float) width / 2 -120;
 
         for (int i = 0; i < 12; i++) {
             float x = (float) (startX + Math.sin(Math.PI / 6 * i) * textR);
             float y = (float) (startY + textR - Math.cos(Math.PI / 6 * i) * textR);
+            //
             if (i != 11 && i != 10 && i != 0) {
                 y = y + mTextPaint.measureText(text[i]) / 2;
             }else {
@@ -287,7 +293,6 @@ public class ClockView extends View {
             }
             canvas.drawText(text[i], x, y, mTextPaint);
         }
-
 
         //获取时间
         Calendar calendar = Calendar.getInstance();
