@@ -27,7 +27,6 @@ public class ClockView extends View {
     //默认的VIEW的大小
     private static final float DEFAULT_WIDTH = 200;
 
-
     //默认的表盘外圆宽度
     private static final float DEFAULT_CIRCLE_WIDTH = 5;
 
@@ -274,7 +273,7 @@ public class ClockView extends View {
 
         //绘制刻度数字
         String text[] = getContext().getResources().getStringArray(R.array.clock);
-        float startX = width / 2 - mTextPaint.measureText(text[1]) / 2;
+        float startX = width / 2;
         float startY = height / 2 - width / 2 + 120;
         float textR = (float) Math.sqrt(Math.pow(width / 2 - startX, 2) + Math.pow(height / 2 - startY, 2));
 
@@ -283,8 +282,7 @@ public class ClockView extends View {
             float y = (float) (startY + textR - Math.cos(Math.PI / 6 * i) * textR);
             if (i != 11 && i != 10 && i != 0) {
                 y = y + mTextPaint.measureText(text[i]) / 2;
-            } else {
-                x = x - mTextPaint.measureText(text[i]) / 4;
+            }else {
                 y = y + mTextPaint.measureText(text[i]) / 4;
             }
             canvas.drawText(text[i], x, y, mTextPaint);
